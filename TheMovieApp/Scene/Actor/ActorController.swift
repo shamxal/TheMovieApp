@@ -18,6 +18,7 @@ class ActorController: BaseController {
         collection.delegate = self
         collection.dataSource = self
         collection.backgroundColor = .clear
+        collection.showsVerticalScrollIndicator = false
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.register(TopImageBottomLabelCell.self,
                             forCellWithReuseIdentifier: TopImageBottomLabelCell.identifier)
@@ -37,6 +38,10 @@ class ActorController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func configureUI() {
+        navigationItem.title = "Popular Actors"
     }
     
     override func configureViewModel() {

@@ -21,7 +21,6 @@ final class ActorViewModel {
     
     func getActorList() {
         let page = (actorData?.page ?? 0) + 1
-        print(page)
         useCase.getPopularActorList(page: "\(page)") { data, errorMessage in
             if let errorMessage {
                 self.error?(errorMessage)
